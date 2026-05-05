@@ -1,8 +1,6 @@
 // ==========================================
 // CONFIGURATION
 // ==========================================
-// 這裡填入跟 GAS 後端一致的 Key
-const API_KEY = 'hsp-xbase-phase1-feedback-2026';
 
 // 1. Parse URL Parameters (Global Scope)
 const urlParams = new URLSearchParams(window.location.search);
