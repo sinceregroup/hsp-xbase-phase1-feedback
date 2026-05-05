@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>竹科X基地園區第一期意見回饋平台</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container safe-area-padding" id="mainContainer">
+        <!-- Header -->
+        <div class="glass-card text-center py-4 px-3">
+            <h4 class="card-title mb-1">竹科X基地園區第一期意見回饋平台</h4>
+            <h6 class="card-subtitle text-muted">HSP X-Base Phase 1 Feedback</h6>
+        </div>
+
+        <!-- Main Form -->
+        <div class="glass-card p-4">
+            <form id="feedbackForm">
+                <!-- Location Info -->
+                <div class="d-flex align-items-center mb-3">
+                    <span class="material-symbols-outlined me-2 text-primary">location_on</span>
+                    <h5 class="fw-bold mb-0">位置資訊 <small class="fw-normal text-muted ms-1"
+                            style="font-size: 0.85rem;">Location</small></h5>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="company" class="form-label">公司名 (Company) <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="company" name="company" placeholder="您的公司名稱" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="floor" class="form-label">樓層 (Floor) <span class="text-danger">*</span></label>
+                        <select class="form-select" id="floor" name="floor" required>
+                            <option value="" selected disabled>請選擇樓層 (Select Floor)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="side" class="form-label">方位 (Side)</label>
+                        <input type="text" class="form-control" id="side" name="side" readonly style="background-color: #f8f9fa;">
+                    </div>
+                </div>
+
+                <hr class="border-secondary opacity-25 my-4">
+
+                <!-- Personal Info -->
+                <div class="d-flex align-items-center mb-3">
+                    <span class="material-symbols-outlined me-2 text-primary">person</span>
+                    <h5 class="fw-bold mb-0">個人資料 (選填) <small class="fw-normal text-muted ms-1"
+                            style="font-size: 0.85rem;">Personal Info</small></h5>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">姓名 (Name)</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="您的姓名">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contact" class="form-label">聯絡方式 (Contact)</label>
+                        <input type="text" class="form-control" id="contact" name="contact"
+                            placeholder="e.g., 0912345678、036573511">
+                    </div>
+                </div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">電子信箱 (Email)</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                    </div>
+                </div>
+
+                <hr class="border-secondary opacity-25 my-4">
+
+                <!-- Facility Issue -->
+                <div class="d-flex align-items-center mb-3">
+                    <span class="material-symbols-outlined me-2 text-danger">build</span>
+                    <h5 class="fw-bold mb-0">公設故障 <small class="fw-normal text-muted ms-1"
+                            style="font-size: 0.85rem;">Facility Issue</small></h5>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label for="issueCategory" class="form-label">分類 (Category) <span class="text-danger">*</span></label>
+                        <select class="form-select" id="issueCategory" name="issueCategory" required>
+                            <option value="" selected disabled>請先選擇樓層與確認方位</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="issueLocation" class="form-label">位置 (Location) <span class="text-danger">*</span></label>
+                        <select class="form-select" id="issueLocation" name="issueLocation" required>
+                            <option value="" selected disabled>請先選擇分類</option>
+                        </select>
+                    </div>
+                </div>
+
+                <hr class="border-secondary opacity-25 my-4">
+
+                <!-- Feedback -->
+                <div class="d-flex align-items-center mb-3">
+                    <span class="material-symbols-outlined me-2 text-primary">chat</span>
+                    <h5 class="fw-bold mb-0">意見反映 <small class="fw-normal text-muted ms-1"
+                            style="font-size: 0.85rem;">Feedback</small></h5>
+                </div>
+
+                <div class="mb-3">
+                    <label for="issueDescription" class="form-label">故障說明 (Issue Description) <small class="text-muted">選填</small></label>
+                    <textarea class="form-control" id="issueDescription" name="issueDescription" rows="3"
+                        placeholder="請詳細描述故障情況..."></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <label for="feedback" class="form-label">意見回饋 (General Feedback) <small class="text-muted">選填</small></label>
+                    <textarea class="form-control" id="feedback" name="feedback" rows="3"
+                        placeholder="請輸入您的寶貴意見..."></textarea>
+                </div>
+
+                <!-- Image Upload -->
+                <div class="mb-2">
+                    <label for="imageInput" class="form-label">上傳照片 (選填)</label>
+                    <!-- 修改 accept，加入 .heic, .heif -->
+                    <input class="form-control" type="file" id="imageInput"
+                        accept="image/jpeg, image/png, image/webp, image/heic, image/heif">
+                    <img id="imagePreview" class="preview-image" alt="Image Preview">
+                    <!-- 增加一個文字提示，因為轉檔需要一兩秒 -->
+                    <div id="imageLoading" class="text-muted mt-2" style="display:none; font-size: 0.9rem;">
+                        <span class="spinner-border spinner-border-sm text-primary" role="status"></span>
+                        正在處理圖片，請稍候... (Processing image...)
+                    </div>
+                    <input type="hidden" id="imageBase64" name="image">
+                    <!-- 新增一個 hidden field 存 mimeType，確保後端知道我們轉成了 jpeg -->
+                    <input type="hidden" id="imageMimeType" name="mimeType">
+                </div>
+            </form>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="glass-card p-3">
+            <button class="submit-btn" id="submitBtn" type="button">
+                送出意見 <small class="d-block fw-normal opacity-75" style="font-size: 0.8rem;">Submit Feedback</small>
+            </button>
+            <!-- Privacy Policy Link (Moved Inside Card) -->
+            <div class="text-center mt-3">
+                <p class="text-muted opacity-75 mb-0" style="font-size: 0.85rem;">
+                    提交即代表您同意 <a href="#" class="text-primary text-decoration-underline" data-bs-toggle="modal"
+                        data-bs-target="#privacyModal">隱私權政策</a><br>
+                    By submitting, you agree to the Privacy Policy.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Container (Hidden by default) -->
+    <div class="container safe-area-padding" id="successContainer" style="display: none;">
+        <div class="glass-card success-container d-block">
+            <div class="checkmark-circle">
+                <div class="background"></div>
+                <div class="checkmark"></div>
+            </div>
+            <h3 class="fw-bold mt-3">提交成功</h3>
+            <h5 class="text-muted fw-normal mb-4">Success</h5>
+            <p class="mb-4 text-secondary">感謝您的回饋，您的意見是我們進步的動力！<br>Thank you for your feedback!</p>
+            <div class="d-flex justify-content-center gap-2">
+                <button class="btn btn-outline-secondary rounded-pill px-4" onclick="handleClose()">關閉視窗
+                    (Close)</button>
+                <button class="btn btn-primary rounded-pill px-4" onclick="location.reload()">再次填寫 (Reload)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Modal -->
+    <div class="modal fade" id="alertModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content glass-card border-0" style="background: rgba(255,255,255,0.9);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold">提示 (Notice)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-2 pb-4" id="alertModalBody"></div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-primary w-100 rounded-4 py-2" data-bs-dismiss="modal">確定
+                        (OK)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content glass-card border-0" style="background: rgba(255,255,255,0.9);">
+                <div class="modal-header border-0 pb-0">
+                    <h5 class="modal-title fw-bold" id="privacyModalLabel">隱私權政策 (Privacy Policy)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-2 pb-4">
+                    <p>本平台為「114年竹科住宅區眷舍公共空間維護案」之意見回饋服務，將會蒐集您的部分個人資料。請您詳閱以下隱私權政策：</p>
+                    <p><strong>1. 資料蒐集之目的：</strong> 蒐集您的姓名、聯絡方式、樓別、樓層、意見內容及上傳照片，旨在處理您的公共區域清潔維護建議、進行後續聯繫及改善服務品質。</p>
+                    <p><strong>2. 資料蒐集之類別：</strong></p>
+                    <ul>
+                        <li>個人識別：姓名 (選填)</li>
+                        <li>聯絡資訊：分機/聯絡方式 (選填)</li>
+                        <li>位置資訊：樓別、樓層 (必填)</li>
+                        <li>意見內容：文字描述 (必填)</li>
+                        <li>影像資料：上傳照片 (選填)</li>
+                    </ul>
+                    <p><strong>3. 資料利用之期間、地區、對象及方式：</strong></p>
+                    <ul>
+                        <li><strong>期間：</strong> 自您提交意見起，至本服務終止或您的意見處理完畢為止。</li>
+                        <li><strong>地區：</strong> 您的資料將儲存於雲端伺服器（如 Google 平台），並僅限於台灣地區使用。</li>
+                        <li><strong>對象：</strong> 您的意見及相關資料將提供給新竹科學園區管理局及本案執行廠商進行處理與改善。</li>
+                        <li><strong>方式：</strong> 您的資料將以電子檔案形式儲存，並僅用於上述目的之範圍內。</li>
+                    </ul>
+                    <p><strong>4. 您可主張之權利：</strong> 針對您的個人資料，您可以行使以下權利：</p>
+                    <ul>
+                        <li>查詢或請求閱覽。</li>
+                        <li>請求製給複製本。</li>
+                        <li>請求補充或更正。</li>
+                        <li>請求停止蒐集、處理或利用。</li>
+                        <li>請求刪除。</li>
+                    </ul>
+                    <p>若您欲行使上述權利，請透過本案相關業務窗口聯繫。</p>
+                    <p><strong>5. 不提供個人資料之影響：</strong> 若您不提供必要的個人資料（如樓別、樓層、意見內容），本平台將無法受理您的意見回饋。</p>
+                    <p><strong>6. 資料安全：</strong> 本平台將採取適當的安全措施，保護您的個人資料，防止未經授權的存取、使用或洩露。</p>
+                    <p>提交意見即表示您已閱讀、理解並同意本隱私權政策之所有內容。</p>
+                    <hr>
+                    <p>This platform collects some of your personal data to provide feedback services for the "2025 HSP
+                        Housing Public Area Maintenance Project". Please read the following Privacy Policy carefully:
+                    </p>
+                    <p><strong>1. Purpose of Data Collection:</strong> Your name, contact information, building, floor,
+                        feedback content, and uploaded photos are collected to process your feedback on public area
+                        cleaning, facilitate
+                        follow-up communication, and improve service quality.</p>
+                    <p><strong>2. Categories of Data Collected:</strong></p>
+                    <ul>
+                        <li>Personal Identification: Name (optional)</li>
+                        <li>Contact Information: Extension/Contact method (optional)</li>
+                        <li>Location Information: Building, Floor (required)</li>
+                        <li>Feedback Content: Text description (required)</li>
+                        <li>Image Data: Uploaded photos (optional)</li>
+                    </ul>
+                    <p><strong>3. Period, Area, Recipients, and Methods of Data Utilization:</strong></p>
+                    <ul>
+                        <li><strong>Period:</strong> From the time you submit your feedback until the termination of
+                            this service or the completion of your feedback processing.</li>
+                        <li><strong>Area:</strong> Your data will be stored on cloud servers (e.g., Google platforms)
+                            and will only be used within Taiwan.</li>
+                        <li><strong>Recipients:</strong> Your feedback and related data will be provided to the Hsinchu
+                            Science Park Bureau and the project contractor for processing and improvement.</li>
+                        <li><strong>Methods:</strong> Your data will be stored in electronic file format and used only
+                            within the scope of the aforementioned purposes.</li>
+                    </ul>
+                    <p><strong>4. Rights You May Exercise:</strong> Regarding your personal data, you may exercise the
+                        following rights:</p>
+                    <ul>
+                        <li>Inquire or request to review.</li>
+                        <li>Request a copy.</li>
+                        <li>Request supplementation or correction.</li>
+                        <li>Request to stop collection, processing, or utilization.</li>
+                        <li>Request deletion.</li>
+                    </ul>
+                    <p>If you wish to exercise the above rights, please contact the project management unit through
+                        relevant channels.</p>
+                    <p><strong>5. Impact of Not Providing Personal Data:</strong> If you do not provide necessary
+                        personal data (such as building, floor, feedback content), this platform will not be able to
+                        process your feedback.</p>
+                    <p><strong>6. Data Security:</strong> This platform will take appropriate security measures to
+                        protect your personal data from unauthorized access, use, or disclosure.</p>
+                    <p>By submitting feedback, you acknowledge, understand, and agree to all contents of this Privacy
+                        Policy.</p>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-primary w-100 rounded-4 py-2" data-bs-dismiss="modal">我同意 (I
+                        Agree)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
