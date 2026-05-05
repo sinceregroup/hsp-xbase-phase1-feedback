@@ -2,7 +2,7 @@
 // CONFIGURATION
 // ==========================================
 // 這裡填入跟 GAS 後端一致的 Key
-const API_KEY = 'sincere-hsp-feedback-2025';
+const API_KEY = 'hsp-xbase-phase1-feedback-2026';
 
 // 1. Parse URL Parameters (Global Scope)
 const urlParams = new URLSearchParams(window.location.search);
@@ -235,8 +235,9 @@ $('#submitBtn').on('click', function () {
 
     // 4. Prepare Data (FormData)
     const formData = new FormData();
-    // 使用上方定義的 API_KEY，確保跟 GAS 驗證通過
-    formData.append('key', API_KEY);
+    // 優先使用網址列的 key 參數，若無則使用預設 API_KEY
+    const urlKey = urlParams.get('key');
+    formData.append('key', urlKey || API_KEY);
 
     formData.append('company', $('#company').val() || '');
     formData.append('floor', $('#floor').val());
