@@ -2,7 +2,7 @@
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzjYcrkqwDZcOYdavT-q0jJ5TsEs57f7g-X1h9swxhFLdW019fiPNzpTCOLfSI9dbgp/exec';
 
 // Dynamic Floor Configuration
-const xbaseFloors = ['2F', '3F', '4F', '5F', '6F', '7F', '8F', '9F', '10F', '11F', '12F', 'B1', 'B2'];
+const xbaseFloors = ['2F', '3F', '4F', '5F', '6F', '7F', '8F', '9F', '10F', '11F', '12F'];
 
 // Issue Categories
 const issueCategories = ['水電', '消防', '結構', '電梯', '其他'];
