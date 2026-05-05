@@ -9,11 +9,18 @@ const urlParams = new URLSearchParams(window.location.search);
 
 document.addEventListener('DOMContentLoaded', function () {
     const sideParam = urlParams.get('side') || '';
+    const floorParam = urlParams.get('floor') || '';
+    const companyParam = urlParams.get('company') || '';
 
-    // 2. Set Side Field
+    // 2. Set Input Fields from URL
     const sideInput = document.getElementById('side');
     if (sideInput && sideParam) {
         sideInput.value = sideParam;
+    }
+
+    const companyInput = document.getElementById('company');
+    if (companyInput && companyParam) {
+        companyInput.value = companyParam;
     }
 
     // 3. Populate Floor Dropdown
@@ -25,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
             const option = document.createElement('option');
             option.value = floor;
             option.textContent = floor;
+            if (floor === floorParam) {
+                option.selected = true;
+            }
             floorSelect.appendChild(option);
         });
     } else {
