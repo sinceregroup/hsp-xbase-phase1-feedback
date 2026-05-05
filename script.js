@@ -185,13 +185,7 @@ if (imageInput) {
     });
 }
 
-// Handle Close Window
-function handleClose() {
-    window.close();
-    setTimeout(() => {
-        alert("因瀏覽器安全性限制，請手動關閉此分頁。\nDue to browser security, please close this tab manually.");
-    }, 100);
-}
+
 
 // ==========================================
 // Form Submission
