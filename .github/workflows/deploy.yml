@@ -29,20 +29,6 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Replace Apps Script URL Placeholder 🔄
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            // 注意：因為我們將 URL 放在 config.js 裡，所以這裡改為替換 config.js
-            const path = './config.js';
-            const secretUrl = '${{ secrets.APPS_SCRIPT_URL }}';
-            
-            let fileContent = fs.readFileSync(path, 'utf8');
-            fileContent = fileContent.replace('APPS_SCRIPT_URL_PLACEHOLDER', secretUrl);
-            fs.writeFileSync(path, fileContent);
-            console.log('Successfully replaced the placeholder URL in config.js.');
-
       - name: Setup Pages ⚙️
         uses: actions/configure-pages@v5
         
